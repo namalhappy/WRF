@@ -1,0 +1,11 @@
+version: '2'
+services:
+  netcdf-python:
+    build: .
+    volumes:
+      - ./src:/home/src
+      - ../DATA:/home/data
+    command: jupyter notebook --no-browser --port 9999 --ip=0.0.0.0 --allow-root
+    working_dir: /home/src
+    ports:
+      - "9999:9999"
